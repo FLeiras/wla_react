@@ -1,37 +1,39 @@
-import { Download, BookOpen, Users, ShieldCheck, Clock3, Crown } from "lucide-react";
+import { BookOpen, Crown, Download, ShieldCheck, Clock3, Users } from "lucide-react";
 import HeroStat from "./HeroStat";
 
 export default function Hero() {
     return (
-        <section className="mx-auto flex max-w-[1400px] items-center justify-between px-5 py-16">
-            <div className="w-[70%]">
-                <h1 className="font-serif text-[clamp(64px,6vw,112px)] font-medium leading-none text-[#f5f7fa] drop-shadow-[0_4px_12px_rgba(0,0,0,.8)]">
-                    WotLK 3.3.5a en
-                    <br />
-                    español para{" "}
-                    <span className="bg-gradient-to-b from-[#fff0b8] via-[#ffd56b] to-[#e0931f] bg-clip-text text-transparent">
-                        LatAm
+        <section className="mx-auto flex max-w-[1400px] flex-col gap-8 px-5 py-10 lg:flex-row lg:items-center lg:justify-between lg:py-16">
+            <div className="w-full lg:w-[70%]">
+                <h1 className="font-serif text-[46px] font-medium leading-none text-[#f5f7fa] drop-shadow-[0_4px_12px_rgba(0,0,0,.8)] sm:text-[64px] lg:text-[clamp(72px,6vw,112px)]">
+                    <span className="block lg:inline">WotLK 3.3.5a en</span>
+                    <br className="hidden lg:block" />
+                    <span className="block lg:inline">
+                        español para{" "}
+                        <span className="bg-gradient-to-b from-[#fff0b8] via-[#ffd56b] to-[#e0931f] bg-clip-text text-transparent">
+                            LatAm
+                        </span>
                     </span>
                 </h1>
 
-                <p className="mt-5 text-lg text-slate-100">
+                <p className="mt-5 text-base text-slate-100 sm:text-lg">
                     x3 · Soporte real · Instalación guiada · Hermandades activas
                 </p>
 
-                <div className="mt-8 flex gap-4">
-                    <button className="flex items-center justify-center gap-3 rounded-lg bg-blue-600 px-7 py-4 font-bold shadow-[0_0_20px_rgba(30,124,255,.25)]">
+                <div className="mt-8 flex flex-col gap-4 sm:flex-row">
+                    <button className="flex items-center justify-center gap-3 rounded-lg bg-blue-600 px-7 py-4 font-bold text-white shadow-[0_0_20px_rgba(30,124,255,.25)]">
                         <Download size={20} />
                         Descargar Launcher
                     </button>
 
-                    <button className="flex items-center justify-center gap-3 rounded-lg border border-white/20 bg-slate-950/50 px-7 py-4 font-semibold">
+                    <button className="flex items-center justify-center gap-3 rounded-lg border border-white/20 bg-slate-950/50 px-7 py-4 font-semibold text-white">
                         <BookOpen size={20} />
                         Cómo empezar
                     </button>
                 </div>
             </div>
 
-            <div className="w-80 rounded-2xl border border-blue-300/20 bg-slate-950/65 p-6 shadow-[inset_0_0_25px_rgba(0,0,0,.35),0_0_35px_rgba(0,0,0,.45)] backdrop-blur-md">
+            <div className="w-full rounded-2xl border border-blue-300/20 bg-slate-950/65 p-6 shadow-[inset_0_0_25px_rgba(0,0,0,.35),0_0_35px_rgba(0,0,0,.45)] backdrop-blur-md sm:max-w-sm lg:w-80">
                 <HeroStat icon={<Users size={18} />} value="1,248" label="ONLINE AHORA" />
                 <HeroStat icon={<ShieldCheck size={18} />} value="99.6%" label="UPTIME 7D" />
                 <HeroStat icon={<Clock3 size={18} />} value="~ 6 MIN" label="ETA DE DESCARGA" />

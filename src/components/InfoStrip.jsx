@@ -30,7 +30,7 @@ export default function InfoStrip() {
     ];
 
     return (
-        <section className="mx-auto grid max-w-[1400px] grid-cols-5 gap-4 px-5 py-3">
+        <section className="mx-auto grid max-w-[1400px] grid-cols-1 gap-4 px-5 py-3 sm:grid-cols-2 lg:grid-cols-5">
             {items.map((item) => (
                 <div
                     key={item.title}
