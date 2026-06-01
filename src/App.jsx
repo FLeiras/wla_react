@@ -1,3 +1,5 @@
+import { Routes, Route } from "react-router-dom";
+
 import Header from "./components/Header";
 import Hero from "./components/Hero";
 import FeatureCards from "./components/FeatureCards";
@@ -5,6 +7,41 @@ import InfoStrip from "./components/InfoStrip";
 import Dashboard from "./components/Dashboard";
 import BottomGrid from "./components/BottomGrid";
 import Footer from "./components/Footer";
+
+function Home() {
+  return (
+    <>
+      <Hero />
+      <FeatureCards />
+      <InfoStrip />
+      <Dashboard />
+      <BottomGrid />
+    </>
+  );
+}
+
+function ComoEmpezar() {
+  return (
+    <section className="mx-auto max-w-[1400px] px-5 py-20">
+      <h1 className="text-5xl font-bold text-white">Cómo empezar</h1>
+      <p className="mt-4 text-slate-300">
+        Próximamente vamos a poner acá la guía completa de instalación.
+      </p>
+    </section>
+  );
+}
+
+function EstadoServidor() {
+  return (
+    <section className="mx-auto max-w-[1400px] px-5 py-20">
+      <h1 className="text-5xl font-bold text-white">Estado del servidor</h1>
+      <p className="mt-4 text-slate-300">
+        Acá podemos mostrar login server, world server, uptime y jugadores
+        online.
+      </p>
+    </section>
+  );
+}
 
 export default function App() {
   return (
@@ -25,11 +62,11 @@ export default function App() {
         <Header />
 
         <main>
-          <Hero />
-          <FeatureCards />
-          <InfoStrip />
-          <Dashboard />
-          <BottomGrid />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/como-empezar" element={<ComoEmpezar />} />
+            <Route path="/estado" element={<EstadoServidor />} />
+          </Routes>
         </main>
 
         <Footer />

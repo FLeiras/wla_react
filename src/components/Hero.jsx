@@ -21,12 +21,12 @@ export default function Hero() {
                 </p>
 
                 <div className="mt-8 flex flex-col gap-4 sm:flex-row">
-                    <button className="flex items-center justify-center gap-3 rounded-lg bg-blue-600 px-7 py-4 font-bold text-white shadow-[0_0_20px_rgba(30,124,255,.25)]">
+                    <button className="cursor-pointer flex items-center justify-center gap-3 rounded-lg bg-blue-600 px-7 py-4 font-bold text-white shadow-[0_0_20px_rgba(30,124,255,.25)]">
                         <Download size={20} />
                         Descargar Launcher
                     </button>
 
-                    <button className="flex items-center justify-center gap-3 rounded-lg border border-white/20 bg-slate-950/50 px-7 py-4 font-semibold text-white">
+                    <button className="cursor-pointer flex items-center justify-center gap-3 rounded-lg border border-white/20 bg-slate-950/50 px-7 py-4 font-semibold text-white">
                         <BookOpen size={20} />
                         Cómo empezar
                     </button>
