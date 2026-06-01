@@ -17,7 +17,6 @@ export default function Header() {
 
   return (
     <header className="relative mx-auto max-w-[1400px] px-5 py-4">
-      {/* Mobile */}
       <div className="flex items-center justify-between lg:hidden">
         <img
           src="/assets/logo_sin_fondo.png"
@@ -27,13 +26,12 @@ export default function Header() {
 
         <button
           onClick={() => setOpen(!open)}
-          className="rounded-lg border border-white/10 bg-slate-900/80 p-2"
+          className="cursor-pointer rounded-lg border border-white/10 bg-slate-900/80 p-2 text-white"
         >
           {open ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
 
-      {/* Desktop */}
       <div className="hidden lg:grid lg:grid-cols-[240px_1fr_340px] lg:items-center">
         <img
           src="/assets/logo_sin_fondo.png"
@@ -41,15 +39,15 @@ export default function Header() {
           className="h-24 w-auto drop-shadow-[0_0_10px_rgba(0,153,255,.5)]"
         />
 
-        <nav className="flex items-center justify-center gap-5 text-[12px] font-semibold text-slate-100">
-          {menuItems.map((item, index) => (
+        <nav className="flex items-center justify-center gap-5 text-[12px] font-semibold">
+          {menuItems.map((item) => (
             <NavLink
               key={item.path}
               to={item.path}
               className={({ isActive }) =>
                 `whitespace-nowrap transition hover:text-blue-300 ${
                   isActive
-                    ? "border-b-2 border-cyan-400 pb-2 text-white drop-shadow-[0_0_8px_rgba(34,211,238,.7)]"
+                    ? "border-b-2 border-blue-400 pb-2 text-white"
                     : "text-slate-100"
                 }`
               }
@@ -60,40 +58,44 @@ export default function Header() {
         </nav>
 
         <div className="flex justify-end gap-2">
-          <button className="cursor-pointer flex items-center gap-2 rounded-lg border border-indigo-400/35 bg-slate-900/80 px-4 py-2 text-sm font-semibold text-white">
+          <button className="flex cursor-pointer items-center gap-2 rounded-lg border border-indigo-400/35 bg-slate-900/80 px-4 py-2 text-sm font-semibold text-white">
             <i className="fa-brands fa-discord" />
             Discord
           </button>
 
-          <button className="cursor-pointer flex items-center gap-2 rounded-lg bg-blue-600 px-5 py-2 text-sm font-semibold text-white">
+          <button className="flex cursor-pointer items-center gap-2 rounded-lg bg-blue-600 px-5 py-2 text-sm font-semibold text-white">
             <Download size={16} />
             Descargar
           </button>
         </div>
       </div>
 
-      {/* Mobile Menu */}
       {open && (
         <div className="mt-4 rounded-xl border border-blue-400/20 bg-slate-950/95 p-4 backdrop-blur-lg lg:hidden">
           <nav className="flex flex-col gap-4">
             {menuItems.map((item) => (
-              <a
-                key={item}
-                href="#"
-                className="border-b border-white/10 pb-2 text-slate-200 transition hover:text-blue-300"
+              <NavLink
+                key={item.path}
+                to={item.path}
+                onClick={() => setOpen(false)}
+                className={({ isActive }) =>
+                  `border-b border-white/10 pb-2 transition hover:text-blue-300 ${
+                    isActive ? "text-blue-300" : "text-slate-200"
+                  }`
+                }
               >
-                {item}
-              </a>
+                {item.label}
+              </NavLink>
             ))}
           </nav>
 
           <div className="mt-5 flex flex-col gap-3">
-            <button className="cursor-pointer flex items-center justify-center gap-2 rounded-lg border border-indigo-400/35 bg-slate-900/80 px-4 py-3 font-semibold">
+            <button className="flex cursor-pointer items-center justify-center gap-2 rounded-lg border border-indigo-400/35 bg-slate-900/80 px-4 py-3 font-semibold text-white">
               <i className="fa-brands fa-discord" />
               Discord
             </button>
 
-            <button className="cursor-pointer flex items-center justify-center gap-2 rounded-lg bg-blue-600 px-4 py-3 font-semibold">
+            <button className="flex cursor-pointer items-center justify-center gap-2 rounded-lg bg-blue-600 px-4 py-3 font-semibold text-white">
               <Download size={18} />
               Descargar Launcher
             </button>
