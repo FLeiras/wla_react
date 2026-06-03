@@ -46,7 +46,7 @@ export default function App() {
         loop
         playsInline
       >
-        <source src="/assets/bg.mp4" type="video/mp4" />
+        <source src="/assets/fondo_2.mp4" type="video/mp4" />
       </video>
 
       <div className="pointer-events-none fixed inset-0 -z-20 bg-[radial-gradient(ellipse_at_center,rgba(0,0,0,0)_20%,rgba(0,0,0,.45)_55%,rgba(0,0,0,1)_100%),linear-gradient(to_bottom,rgba(0,0,0,.55)_0%,rgba(0,0,0,0)_35%,rgba(0,0,0,.85)_100%)]" />
